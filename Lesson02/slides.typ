@@ -1,5 +1,6 @@
 #import "@preview/touying:0.6.1": *
 #import themes.metropolis: *
+#import "../catppuccin-latte.typ": catppuccin-latte-colors
 #show: metropolis-theme.with(
   aspect-ratio: "16-9",
   footer: self => text(size: 0.6em, fill: gray)[SAST 运维/Linux 组 · 2026 · 第二课],
@@ -10,7 +11,7 @@
     date: [2026 年秋 · 授课打样],
     institution: [南京邮电大学 SAST],
   ),
-  config-colors(primary: rgb("#0d7377")),
+  catppuccin-latte-colors,
 )
 #set text(font: ("Segoe UI", "Source Han Sans SC"), lang: "zh")
 #show raw: set text(font: ("JetBrains Mono", "Source Han Sans SC"))

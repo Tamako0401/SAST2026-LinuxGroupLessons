@@ -1,5 +1,6 @@
 #import "@preview/touying:0.6.1": *
 #import themes.metropolis: *
+#import "../catppuccin-latte.typ": catppuccin-latte-colors
 
 #show: metropolis-theme.with(
   aspect-ratio: "16-9",
@@ -8,11 +9,11 @@
   config-info(
     title: [提问的智慧 · 初识 GNU/Linux],
     subtitle: [SAST 运维/Linux 组 · 第一课],
-    author: [运维/Linux 组],
+    author: [Y11Han],
     date: [2026 年 · 秋 ],
     institution: [软件研发部],
   ),
-  config-colors(primary: rgb("#0d7377")),
+  catppuccin-latte-colors,
 )
 #set text(font: ("Segoe UI", "Source Han Sans SC"), lang: "zh")
 #show raw: set text(font: ("JetBrains Mono", "Source Han Sans SC"))
@@ -179,14 +180,24 @@
 = 计算机教育中缺失的一课
 
 == 大学课表不会教你的东西
-你的培养方案里有：高数、C 语言、数据结构、操作系统原理……
+你的培养方案里有：高数、线性代数与解析几何、C 语言、数据结构……
 
 但*没有一门课*教你：
 
 - 怎么熟练使用命令行和 Shell
 - 怎么用编辑器高效改代码
-- 怎么用 Git 管理代码而不是靠“最终版v2(1).zip”
+- 怎么用 Git 管理代码而不是靠“最终版v2(1).zip”、“代码.docx”
 - 程序挂了怎么调试、怎么翻墙找资料、怎么保护隐私
+
+== The Missing Semester Of Your CS Education
+
+#align(center)[
+推荐阅读：《计算机教育中缺失的一课 IAP 2026》
+
+  #text(size: 0.8em)[
+  https://missing-semester-cn.github.io/
+  ]
+]
 
 
 == The Missing Semester Of Your CS Education
@@ -244,26 +255,30 @@ MIT 的一门课，专门补这个缺口，已有完整中文版：
 
 桌面之外（从掌心设备到云端算力，再到算力巅峰的超算与 AI 集群），人类几乎所有的现代计算底座都跑在 Linux 上。
 
-== 运维不只是“会敲命令”
+== 为什么值得大学生认识它
 
-- 网站或服务跑在哪里？怎么启动、升级、恢复？
-- 用户说“打不开”，如何区分网络、进程、配置问题？
-- 怎样让操作能被下一位同学接手？
+#align(center)[
 
-Linux 常用于服务器、云、嵌入式和开发环境；Android 使用 Linux 内核。
+  #image("/assets/image-1.png", width: 72%)
 
-Windows、macOS 也有终端、日志和自动化。*工具选择看任务，不比优越感。*
+  #text(size: 0.6em)[
+    知乎问答 - 为什么计算机专业的学生要学习使用 Linux 系统？
+    https://www.zhihu.com/question/19934684
+  ]
+]
 
-== 从哪里开始使用 Linux？
+== 名字怎么这么长
 
-#table(columns: (auto, 1fr), inset: 7pt,
-  [虚拟机], [练安装、快照与系统管理；本课主线],
-  [WSL2], [Windows 上练 Linux 工具；启动与网络有差异],
-  [远程服务器], [通过 SSH 使用；必须有授权和独立练习账号],
-  [裸机 / 双系统], [直接管理硬件；不作为新生第一课安装路径],
-)
+60 年代末，AT&T 的贝尔实验室的工程师们发明了名为 Unix 的操作系统，并将其广泛分享给各高校和研究机构，那是个自由的时代。
 
-容器以后再讲：它不是这节课“安装操作系统”的替代练习。
+但到了80年代，AT&T 受制于美国反垄断法，Unix 的源代码不再自由分享。于是各高校和研究机构纷纷在 Unix 的基础上开发自己的操作系统，形成了 *Unix-like* 的生态。AT&T开始起诉Unix衍生版开发者侵犯版权，后来甚至起诉了加州大学伯克利分校（BSD）和麻省理工学院（MIT），引发了 *Unix wars*。科技界的格局变了。
+
+
+门上插刀
+直字拐弯
+天上平板
+船顶漏雨
+
 
 == 把这几个名词放到一张图里
 
