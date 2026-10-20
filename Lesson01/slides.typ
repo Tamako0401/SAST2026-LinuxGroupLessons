@@ -8,7 +8,7 @@
   header-right: image("/assets/sast-logo-白.png", height: 1.2em),
   config-info(
     title: [提问的智慧 · 初识 GNU/Linux],
-    subtitle: [SAST 运维/Linux 组 · 第一课],
+    subtitle: [SAST 运维/Linux 组 · 第一课 暨方草地公开课],
     author: [Y11Han],
     date: [2026 年 · 秋 ],
     institution: [软件研发部],
@@ -126,6 +126,49 @@
 3. *最小化复现*
   - 把问题缩减到最小案例，往往缩着缩着自己就解决了
 
+== 搜索引擎的正确姿势
+
+#columns(2)[
+
+  *为什么是这个顺序？*
+
+  百度受商业因素所限，大概率返回与问题并非最相关的内容。能访问世界互联网就用 Google，否则 Bing 国际版。
+
+  *进阶语法*
+
+  - `site:` 只在指定站点内搜索
+  - `"双引号"` 精确匹配报错原文
+  - `-` 排除干扰词、`*` 通配不确定的部分
+  - 限定时间范围，#strike[老师好我是何同学]
+
+  #colbreak()
+
+  *一个案例*
+
+  想了解 PyTorch 的叉乘怎么写？
+
+  - 百度「pytorch 叉乘」→ 点开一篇 CSDN 教程，发现还要交钱
+  - Google `pytorch cross product` → 直接读 pytorch.org 官方文档
+
+  后者永远更全面、更透彻。
+
+  上手新工具同理：搜 `carla doc`，从官方文档的 *Getting Started* 读起。
+
+]
+
+== 按问题选地方
+
+#v(1em)
+
+#table(columns: (auto, 1fr), inset: 9pt,
+  [*遇到的情况*], [*去哪查*],
+  [报错看不懂、编译不过], [Stack Overflow —— CSDN 不少内容正搬运自这里],
+  [论文出处、引用格式], [Google Scholar],
+  [想找现成的轮子], [GitHub 搜索 / Code Search，用之前先看 LICENSE],
+  [上手新工具、新库], [官方文档的 Getting Started],
+  [学公开课（如 CS231n）], [课程主页 → YouTube 讲解 → B 站 / 知乎补充],
+)
+
 == 让信息能被搜索、复制、复现
 
 - 命令和报错尽量用 *文本 + 代码块*，附相关上下文。
@@ -167,11 +210,23 @@
 
 == 提问之后
 
+科协水群里有句“暴言”：「有技术问题时，摇人比查文档更方便。」
+
+交流当然值得鼓励 —— 但提问之前先付出努力；即使问了，主动权也始终在你手里：对方没有义务替你解决，继续自己找答案也许依然需要。
+
 #align(center)[
 推荐阅读：《提问的智慧》（How To Ask Questions The Smart Way）
 
   #text(size: 0.8em)[
   github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way
+  ]
+
+#v(0.5em)
+
+延伸阅读：SAST Skill Docs ·《如何解决问题》
+
+  #text(size: 0.8em)[
+  docs.net9.org/basic/meet-problems/
   ]
 ]
 
@@ -187,18 +242,15 @@
 - 怎么熟练使用命令行和 Shell
 - 怎么用编辑器高效改代码
 - 怎么用 Git 管理代码而不是靠“最终版v2(1).zip”、“代码.docx”
-- 程序挂了怎么调试、怎么翻墙找资料、怎么保护隐私
+- 怎么调试程序、怎么跨越长城找资料、怎么保护隐私
+- *怎么截图以不侵犯别人的眼睛*
 
-== The Missing Semester Of Your CS Education
-
-#align(center)[
-推荐阅读：《计算机教育中缺失的一课 IAP 2026》
-
-  #text(size: 0.8em)[
-  https://missing-semester-cn.github.io/
-  ]
-]
-
+#place(
+  top + left, 
+  dx: 20cm, 
+  dy: 7.5cm, 
+  image("/assets/image-2.png", width: 25%)
+)
 
 == The Missing Semester Of Your CS Education
 
@@ -267,129 +319,417 @@ MIT 的一门课，专门补这个缺口，已有完整中文版：
   ]
 ]
 
-== 名字怎么这么长
+== 从#strike("开天辟地")说起
 
 60 年代末，AT&T 的贝尔实验室的工程师们发明了名为 Unix 的操作系统，并将其广泛分享给各高校和研究机构，那是个自由的时代。
 
-但到了80年代，AT&T 受制于美国反垄断法，Unix 的源代码不再自由分享。于是各高校和研究机构纷纷在 Unix 的基础上开发自己的操作系统，形成了 *Unix-like* 的生态。AT&T开始起诉Unix衍生版开发者侵犯版权，后来甚至起诉了加州大学伯克利分校（BSD）和麻省理工学院（MIT），引发了 *Unix wars*。科技界的格局变了。
+但到了 80 年代，AT&T 在反垄断拆分后进入计算机市场，Unix 的源代码从此不再自由分享。各高校和研究机构只得在 Unix 的基础上开发自己的操作系统，形成了 *Unix-like* 的生态。AT&T 开始起诉 Unix 衍生版开发者侵犯版权，后来甚至起诉了加州大学伯克利分校（BSD），引发了 *Unix wars*。科技界的格局变了。
 
 
-门上插刀
-直字拐弯
-天上平板
-船顶漏雨
+== 理查德·斯托曼 (Richard Matthew Stallman)
+
+他是一位著名的自由软件倡导者和程序员，也是 GNU 项目的创始人。他辞去了麻省理工的工作，并于1985年创立了自由软件基金会（FSF），致力于推广*四大基本自由*：
+
+// CRT Style
+#align(center)[
+  #block(width: 94%, radius: 6pt, inset: (x: 2em, y: 1.2em))[
+    #set text(font: ("VT323"), size: 20pt)
+
+    // 辉光
+    #let glow(body, color: rgb("#40b864"), radius: 0.06em, copies: 10) = box({
+      for i in range(copies) {
+        let a = i / copies * 360deg
+        place(dx: radius * calc.cos(a), dy: radius * calc.sin(a),
+          text(fill: color.transparentize(88%), body))
+      }
+      text(fill: color, body)
+    })
+
+    #glow([#text(size: 2.5em)[BASIC FREEDOMS ]])
+
+    #v(0.3em)
+    
+    #let line(color, en) = {
+      glow(color: color)[#en]
+    }
+
+    #align(center)[
+      #block[
+        #align(left)[
+        #line(rgb("#15286f"), [#text(size: 1.5em)[0. Free to run it]])
+        #linebreak()
+        #line(rgb("#5b6340"), [#text(size: 1.5em)[1. Free to study it]])
+        #linebreak()
+        #line(rgb("#8b5776"), [#text(size: 1.5em)[2. Free to change it]])
+        #linebreak()
+        #line(rgb("#509e61"), [#text(size: 1.5em)[3. Free to share it]])
+        ]
+      ]
+    ]
+  ]
+]
+
+为了确保这些自由，他创建了一种法律许可协议，开发者可以将其附加在代码上。
 
 
-== 把这几个名词放到一张图里
+== GNU 通用公共许可证 (GPL)
+#block[
 
-```text
-你的电脑（宿主机 Windows）
-└─ VMware（虚拟化软件）
-   └─ 一台虚拟电脑（客户机）
-      └─ Ubuntu（GNU/Linux 发行版）
-         └─ 终端窗口
-            └─ Bash（Shell，解释并执行命令）
-```
+  #set text(
+    font: ("JetBrains Mono"),
+    size: 9.8pt,
+    fill: rgb("#24292f"),
+    spacing: 110%,
+  )
+  #set par(leading: 0.75em, justify: true)
 
-Shell 也可以运行在远程会话里，不一定有图形终端窗口。
 
-== 为什么统一用 Ubuntu 24.04 LTS？
+  // ==== 许可证展示（居中头 + 原始文本） ====
+  #align(center)[
+    #text(size: 1.35em, weight: "bold")[
+      GNU #text(fill: rgb("#b45309"))[GENERAL PUBLIC LICENSE]
+    ] \
+    #v(2pt)
+    #text(size: 1.0em, fill: rgb("#57606a"))[
+      Version 1, February 1989
+    ]
 
-- Linux 指内核；发行版把内核、工具、软件包等组织起来。
-- Ubuntu 的资料较多，统一版本便于互相复现问题。
-- *LTS* 指长期支持；具体软件包支持范围仍需查官方说明。
-- 桌面不是发行版的必需部分，服务器可以没有桌面。
+    #v(10pt)
 
-我们选的是 *课堂基线*，不是宣布它适合所有工作。
+    // 版权与声明段落
+    #block(width: 82%)[
+      #set text(size: 8.6pt, fill: rgb("#57606a"))
+      #set par(justify: false)
+      Copyright (C) 1989 Free Software Foundation, Inc. \
+      51 Franklin St, Fifth Floor, Boston, MA 02110-1301, USA \
+      #v(2pt)
+      Everyone is permitted to copy and distribute verbatim copies \
+      of this license document, but changing it is not allowed.
+    ]
 
-Apple Silicon 使用 ARM64；Intel/AMD 常见 PC 使用 amd64。
+    #v(12pt)
 
-== 镜像站：从笔试的网络题走到真实服务
+    // Preamble 章节标题
+    #text(size: 1.15em, weight: "bold", fill: rgb("#0f1419"))[Preamble]
+  ]
 
-#link("https://mirrors.njupt.edu.cn/")[mirrors.njupt.edu.cn]
+  #v(8pt)
 
-- *ISO 镜像*：安装系统用的文件。
-- *软件仓库镜像*：包管理器获取索引和软件包的站点。
-- 镜像通常是上游内容的副本，不是另一个发行版。
-- 校园网可能更快；速度、目录、同步状态都要实际验证。
+  // ==== 核心条款 ====
+  #block(width: 100%, inset: (left: 1.5em))[
+    #set par(first-line-indent: 2em, justify: true)
 
-第二课从这里获取安装介质、理解 apt 源；今天先认识入口。
+    The license agreements of most software companies try to keep users at the mercy of those companies. By contrast, our General Public License is intended to guarantee your freedom to share and change free software--to make sure the software is free for all its users.
 
-== 演示：三个小工具，回答一个具体问题
+    #v(6pt)
 
-已准备好的 `status.log` 每行是一个状态码：
+    When we speak of free software, we are referring to freedom, not price. Specifically, the General Public License is designed to make sure that you have the freedom to give away or sell copies of free software, that you receive source code or can get it if you want it, that you can change the software or use pieces of it in new free programs; and that you know you can do these things.
 
-```text
-200
-404
-200
-500
-404
-```
+    #v(6pt)
+
+    #text(fill: rgb("#57606a"))[
+      To protect your rights, we need to make restrictions that forbid anyone to deny you these rights or to ask you to surrender the rights. These restrictions translate to certain responsibilities for you if you distribute copies of the software, or if you modify it...
+    ]
+  ]
+
+  // ==== 底部 Unix 终端状态栏 ====
+
+  #line(length: 100%, stroke: 0.5pt + rgb("#e1e4e8"))
+  #v(3pt)
+  #grid(
+    columns: (1fr, auto),
+    text(size: 7.5pt, fill: rgb("#8c959f"))[
+      -- MORE (Line 1-28/182) -- [Press SPACE to continue, 'q' to quit]
+    ],
+    text(size: 7.5pt, fill: rgb("#8c959f"))[
+      UTF-8 // 100%
+    ]
+  )
+]
+
+
+== GNU is Not Unix
+
+为了反击AT&T，他开始研发一个基于Unix的项目，但完全从零开始构建
+#align(center)[
+
+#block(
+  fill: rgb("#16181b"),
+  inset: (x: 22pt, top: 20pt, bottom: 24pt),
+  radius: 6pt,
+  stroke: 1pt + rgb("#282e34"),
+)[
+  #set text(
+    font: ("Cascadia Code", "DejaVu Sans Mono", "Consolas", "Courier New"),
+    size: 10.5pt,
+    fill: rgb("#e7fcff"),
+  )
+  #set smartquote(enabled: false)
+  #set par(leading: 0.75em, justify: false)
+
+  GNU 0.3 (hurdle) (tty1)
+
+  #v(8pt)
+
+  #grid(
+    columns: (auto, auto),
+    gutter: 14pt,
+    align: (top, top),
+    block(
+      fill: rgb("#bcc4c8"),
+      stroke: 0.8pt + rgb("#555d64"),
+      radius: 1.5pt,
+      inset: 2pt,
+      width: 34pt,
+      height: 34pt,
+      align(center + horizon)[
+        #image("/assets/gnu.svg", width: 27pt)
+      ]
+    ),
+    [
+      #v(1pt)
+      This is the superunprivileged.org Hurd LiveCD. \
+      Welcome.
+    ]
+  )
+
+  #v(10pt)
+
+  Use 'login USER' to login, or 'help' for more information about logging in. \
+  Try logging in as the 'guest', or the 'tutorial' user. The passwords are \
+  the same as the usernames. \
+  After logging in, use 'info guide' to learn more about how to use the Hurd.
+
+  #v(8pt)
+
+  login> \_
+]
+]
+
+
+
+== GNU is Not Unix
+
+要复刻Unix系统，GNU项目必须重构三层功能：
+
+// CRT Style
+#align(left)[
+  #block(width: 94%, radius: 6pt, inset: (x: 2em, y: 1.2em))[
+    #set text(font: ("VT323", "Microsoft YaHei"), size: 22pt)
+
+    // 辉光
+    #let glow(body, color: rgb("#40b864"), radius: 0.06em, copies: 10) = box({
+      for i in range(copies) {
+        let a = i / copies * 360deg
+        place(dx: radius * calc.cos(a), dy: radius * calc.sin(a),
+          text(fill: color.transparentize(88%), body))
+      }
+      text(fill: color, body)
+    })
+
+    #v(-1em)
+    
+    #let line(color, en) = {
+      glow(color: color)[#en]
+    }
+
+    #block[
+      #align(left)[
+
+        #glow(color: rgb("#7fb89a"), text(size: 1.5em)[0. Utilities]) #h(1.5em) #glow(color: rgb("#7fb89a"),text(size: 1.0em)[实用程序])
+        #linebreak()
+        #glow(color: rgb("#cc9f55"), text(size: 1.5em)[1. The Shell]) #h(1.5em) #glow(color: rgb("#cc9f55"),text(size: 1.0em)[外壳/解释器])
+        #linebreak()
+        #glow(color: rgb("#bc6142"), text(size: 1.5em)[2. The Kernel]) #h(1.5em) #glow(color: rgb("#bc6142"),text(size: 1.0em)[内核])
+
+      ]
+    ]
+  ]
+]
+#text(size: 0.8em)[
+  哦对了说到递归命名法：
+
+  GNU is Not Unix.
+  
+  YAML is Ain't Markup Language.
+  
+  Wine Is Not an Emulator.
+
+]
+
+
+== 在接下来的七年里
+
+GNU项目从头开始完成了大部分工作：
+  #columns(2, gutter: 1em)[
+    #image("/assets/image-7.png", width: 100%)
+    #text[GCC 编译器]
+
+    #image("/assets/image-12.png", width: 98%)
+    #text[Bash Shell]
+]
+#v(1em)
+......以及众多核心工具集。但他们一直缺少一个关键组件 —— 内核。
+
+== 与此同时，赫尔辛基 (1991)
+
+芬兰赫尔辛基大学的学生 Linus Torvalds 想在自己的 386 上跑一个自由的 Unix：MINIX 只许教学使用、不许修改，GNU 的内核又迟迟不来。
+
+于是他决定自己写一个 —— 从终端仿真器写起，写着写着，写成了内核。8 月 25 日，他在 Usenet 新闻组发了条帖子：
+
+#align(center)[
+#block(
+  width: 88%,
+  fill: rgb("#16181b"),
+  inset: (x: 22pt, top: 16pt, bottom: 18pt),
+  radius: 6pt,
+  stroke: 1pt + rgb("#282e34"),
+)[
+  #set text(
+    font: ("Cascadia Code", "DejaVu Sans Mono", "Consolas", "Courier New"),
+    size: 10.5pt,
+    fill: rgb("#e7fcff"),
+  )
+  #set smartquote(enabled: false)
+  #set par(leading: 0.75em, justify: false)
+
+  #text(fill: rgb("#7d8590"), size: 9pt)[
+    From: torvalds\@klaava.Helsinki.FI (Linus Benedict Torvalds) \
+    Newsgroups: comp.os.minix · 25 Aug 1991
+  ]
+
+  #v(6pt)
+
+  Hello everybody out there using minix —
+
+  I'm doing a (free) operating system (*just a hobby, won't be big
+  and professional like gnu*) for 386(486) AT clones. ...
+]
+]
+
+== 最后一块拼图
+
+GNU 的零件箱万事俱备，只差内核 —— Hurd 却迟迟难产；而 Linus 的内核离开编译器和工具链，自己也跑不起来。
+
+1992 年，Linux 改用 GPL 发布。二者拼合 —— 一个完全自由的操作系统诞生了。
+
+#v(0.5em)
+
+#align(center)[
+#grid(
+  columns: (auto, auto, auto, auto, auto),
+  gutter: 1.6em,
+  align: center + horizon,
+  image("/assets/gnu.svg", width: 4em),
+  text(size: 2.2em)[+],
+  image("/assets/tux.png", height: 4.6em),
+  text(size: 2.2em)[=],
+  text(size: 1.3em)[*GNU/Linux*],
+)
+]
+
+#v(0.5em)
+
+后面的事你们都知道了：发行版遍地开花，然后是 Android、云计算、超算 —— 正是开头的那组数据。
+
+== Unix 哲学
+
+#quote(block: true)[
+  Write programs that do one thing and do it well. \
+  Write programs to work together. \
+  Write programs to handle text streams, for that is a universal interface.
+
+  #align(right)[—— Doug McIlroy，Unix 管道的发明人]
+]
+
+#v(0.5em)
+
+*做一件事并把它做好；让程序互相协作；文本流是万能接口。*
+
+没有“统计 404”这个命令 —— 但两个各只做一件事的小工具，一拼就是：
 
 ```bash
 grep -x '404' status.log | wc -l
 ```
 
-先猜输出，再解释：*选出整行 404 → 统计行数 = 2*。
+== 发行版：打包好的自由
 
-== “一切皆文件”是一种接口思路
+Linux 只是内核。你真正能装上手的，是*发行版* —— 把内核、GNU 工具、包管理器和安装器打包好的成品：
 
-- 普通文件可以读取、写入；管道连接程序的输入输出。
-- `/proc` 中有许多由内核动态提供的信息。
-- 不等于“网络设备就是普通文件”，也不等于所有信息都落盘。
+#v(0.5em)
 
-Unix 工具设计鼓励 *小功能、清晰接口、组合使用*。
+#align(center)[
+  #box(image("/assets/debian.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/ubuntu.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/fedora.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/archlinux.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/android.svg", height: 2.4em))
+]
 
-刚才组合的是工具；这与接下来讲的 *原子更新*不是同一个概念。
+#v(0.5em)
 
-== 一次操作，不等于“随手一串命令”
+#table(columns: (auto, 1fr), inset: 9pt,
+  [*Debian 系*], [Debian → Ubuntu → Mint ……（`apt`）],
+  [*Red Hat 系*], [Fedora / RHEL / CentOS ……（`dnf`）],
+  [*Arch 系*], [Arch → Manjaro ……（`pacman`），滚动更新],
+  [*另类*], [Android：Linux 内核 + 一套完全不同的用户态],
+)
 
-```bash
-mkdir -p notes && printf '%s\n' 'first note' > notes/a.txt
-```
+#v(0.5em)
 
-- `&&`：前一步成功，才执行下一步；*失败不会自动回滚*。
-- `>`：写入前截断原文件；重跑会覆盖，不是追加。
-- `mkdir -p`：目录已存在时仍可成功，是幂等行为的一个例子。
+本组统一 *Ubuntu 24.04 LTS*：文档最多、报错最好搜 —— 这正是上半场的道理。镜像与安装包走南邮镜像站：`mirrors.njupt.edu.cn`
 
-*组合、条件执行、幂等、原子性是四个不同概念。*
+== 终端 ≠ Shell
 
-== 原子更新：先准备，再发布（只建立直觉）
+#grid(columns: (1fr, 2fr), gutter: 1em,
+  [
+   #v(1em)
 
-```text
-生成同目录临时文件 → 校验内容 → rename 替换目标
-```
+   ```text
+   宿主机：你的电脑
+   └─ VMware（虚拟化软件）
+     └─ Guest：一台虚拟电脑
+       └─ Ubuntu（发行版）
+         └─ 终端（窗口）
+           └─ Bash（Shell）
+   ```
+  ],
+  [
+   #v(1em)
 
-同一文件系统内，满足条件的 rename 可以原子地替换目录项：
-观察者看到旧版本或新版本，而不是半份文件。
+   - *终端*：那个黑窗口，管显示和键盘输入
+   - *Shell*：真正理解命令的程序（Bash / Zsh / Fish）
+   - SSH 连服务器时用 —— 对面往往连桌面都没有
+  ],
+)
 
-但这 *不是* 多步数据库事务，也不自动保证断电后持久保存。
+== 一个小任务
 
-今天只记：*不要直接把未完成的结果当成最终结果。*
+下节课亲手完成，今天先*预测*最后会输出几：
 
-== 工程习惯：给自己和别人留条路
+#block(
+  fill: rgb("#16181b"),
+  inset: (x: 22pt, top: 14pt, bottom: 16pt),
+  radius: 6pt,
+  stroke: 1pt + rgb("#282e34"),
+)[
+  #show raw.where(block: true): set text(fill: rgb("#e7fcff"), size: 10.5pt)
+  ```bash
+  # 在 Bash 中执行；新建临时目录，避免覆盖已有文件
+  lab=$(mktemp -d "$HOME/sast-lab.XXXXXX"); cd "$lab"
+  printf '%s\n' 200 404 200 500 404 > status.log
+  cat status.log
+  grep -x '404' status.log | wc -l
+  ```
+]
 
-+ 先看：当前目录、目标文件、身份、原始错误。
-+ 小步改：一次一个条件，不用 `sudo` 掩盖不理解的问题。
-+ 再验：退出状态 + 实际结果；没有输出不等于成功。
-+ 留记录：命令、版本、观察；历史记录不等于完整实验笔记。
-+ 留退路：配置备份、虚拟机快照；快照不等于独立备份。
+#v(0.5em)
 
-下一次课，我们亲手把这个闭环走完。
+两个各只做一件事的工具，用管道拼出答案 —— 这就是 Unix 哲学。
 
-== 离场任务与下节准备
 
-*离场卡：* 写一个更好的提问；画出终端 / Shell / 系统的关系。
-
-*课前准备（详细步骤看讲义）：*
-- 报告系统、CPU 架构、内存、磁盘和虚拟化状态。
-- Windows x86_64 主线：安装 VMware，下载统一的 24.04.x ISO。
-- Mac / 低配置 / 下载困难：提前报备，安排 UTM、WSL2 或结对。
-
-*不要求课前装好 Ubuntu；安装过程留到第二课一起走。*
 
 #focus-slide[
-  不用先成为高手，才有资格提问。\
-  从一次能解释、能验证的操作开始。
+  不用先成为高手，才有资格提问；\
+  也不用等谁的许可，才轮到你动手。
 ]
