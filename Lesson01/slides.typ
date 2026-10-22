@@ -569,7 +569,7 @@ GNU项目从头开始完成了大部分工作：
 
 == 与此同时，赫尔辛基 (1991)
 
-芬兰赫尔辛基大学的学生 Linus Torvalds 想在自己的 386 上跑一个自由的 Unix：MINIX 只许教学使用、不许修改，GNU 的内核又迟迟不来。
+芬兰赫尔辛基大学的学生 Linus Torvalds（林纳斯·托瓦茲）想在自己的 386 上跑一个自由的 Unix：MINIX 只许教学使用、不许修改，GNU 的内核又迟迟不来。
 
 于是他决定自己写一个 —— 从终端仿真器写起，写着写着，写成了内核。8 月 25 日，他在 Usenet 新闻组发了条帖子：
 
@@ -602,6 +602,57 @@ GNU项目从头开始完成了大部分工作：
   and professional like gnu*) for 386(486) AT clones. ...
 ]
 ]
+
+== 你可能不知道 Linus 是谁，但你一定见过这张图
+
+#grid(
+  columns: (0.72fr, 1fr),
+  gutter: 1.5em,
+  [
+    #image("/assets/image-8.png", width: 100%)
+    #v(-0.4em)
+    #set par(justify: false)
+    #text(size: 0.73em)[2012 年，阿尔托大学。被问到 NVIDIA 显卡的 Linux 驱动支持，Linus 答：#text(fill: rgb("#179299"), weight: "bold")[「NVIDIA 是我们接触过的最糟糕的公司。」]随后竖起了中指。]
+  ],
+  [
+    #text(size: 0.7em, fill: rgb("#6c6f85"), tracking: 0.08em)[1969 生于赫尔辛基 · Linux 与 Git 的作者]
+    #v(0.05em)
+    #text(size: 1.45em, weight: "bold")[Linus Torvalds]
+    #v(0.15em)
+    #text(size: 0.8em)[21 岁写下 Linux 内核；2005 年用两周写出 Git。今天，Linux 跑在 Android、云计算和超算上。]
+    #v(0.15em)
+    #text(size: 0.76em)[脾气火爆，但对代码较真到近乎苛刻。]
+  ],
+)
+
+#v(1.25em)
+
+
+#grid(
+  columns: (1fr, 1fr, 1fr),
+  gutter: 1.6em,
+  [
+    #line(length: 100%, stroke: 1.2pt + rgb("#179299"))
+    #v(0.15em)
+    #text(size: 0.75em, weight: "bold")[Talk is cheap. Show me the code.]
+    #v(0.05em)
+    #text(size: 0.72em)[空谈无益，放码过来。]
+  ],
+  [
+    #line(length: 100%, stroke: 1.2pt + rgb("#179299"))
+    #v(0.15em)
+    #text(size: 0.8em, weight: "bold")[Just for fun.]
+    #v(0.05em)
+    #text(size: 0.72em)[只是为了好玩。]
+  ],
+  [
+    #line(length: 100%, stroke: 1.2pt + rgb("#179299"))
+    #v(0.15em)
+    #text(size: 0.75em, weight: "bold")[We don't break userspace.]
+    #v(0.05em)
+    #text(size: 0.72em)[内核可以变，但用户的程序不能坏。]
+  ],
+)
 
 == 最后一块拼图
 
