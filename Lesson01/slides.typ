@@ -8,7 +8,7 @@
   header-right: image("/assets/sast-logo-白.png", height: 1.2em),
   config-info(
     title: [提问的智慧 · 初识 GNU/Linux],
-    subtitle: [SAST 运维/Linux 组 · 第一课 暨方草地公开课],
+    subtitle: [SAST 运维/Linux 组 第一课 · 方草地公开课],
     author: [Y11Han],
     date: [2026 年 · 秋 ],
     institution: [软件研发部],
@@ -47,7 +47,7 @@
 
 - 先问“在吗”，等对方回复后才说正事。
 - 报错信息靠拍屏，而且只拍最后一行。
-- 搜索引擎都没打开过，先问人甚至是劣等模型。
+- 搜索引擎都没打开过，先问路人甚至是劣等模型。
 - 在群里问“有人懂 xxx 吗”，而不是直接描述问题。
 
 #quote(block: true)[
@@ -57,8 +57,10 @@
   WHY IS THERE CODE??? MAKE A FUCKING .EXE FILE AND GIVE IT TO ME. these dumbfucks think that everyone is a developer and understands code. well i am not and i don't understand it. I only know to download and install applications. SO WHY THE FUCK IS THERE CODE? make an EXE file and give it to me. STUPID FUCKING SMELLY NERDS
   ]
 ]
-
-#v(1em)
+#h(1em)
+#text(size: 0.7em)[https://github.com/sherlock-project/sherlock/issues/2011]
+#h(2em)
+#text(size: 0.7em)[https://nohello.net/zh-cn/]
 
 
 == 一个真实的场景
@@ -118,7 +120,7 @@
 
 1. *STFW* — Search The Friendly Web
   - 用英文关键词 + 报错原文搜索（Google > Bing > 百度）
-  - 报错信息复制完整原文去搜，不要自己转述
+  - 报错信息复制完整原文去搜，不要自己转述，更不要拍屏！
   - AI 概览只能作为参考
 2. *RTFM* — Read The Friendly Manual
   - `man ls`、`tldr tar`、`命令 --help`
@@ -152,9 +154,11 @@
 
   后者永远更全面、更透彻。
 
-  上手新工具同理：搜 `carla doc`，从官方文档的 *Getting Started* 读起。
+  上手新工具同理：搜 `carla doc`，从官方文档的 #highlight[Getting Started] 读起。
 
 ]
+
+#text(size: 0.8em)[参考资料： https://www.instructables.com/How-to-Properly-Use-a-Search-Engine/]
 
 == 按问题选地方
 
@@ -162,11 +166,11 @@
 
 #table(columns: (auto, 1fr), inset: 9pt,
   [*遇到的情况*], [*去哪查*],
-  [报错看不懂、编译不过], [Stack Overflow —— CSDN 不少内容正搬运自这里],
+  [报错看不懂、编译不过], [Stack Overflow —— CSDN/知乎/NGA 不少内容搬运自这里],
   [论文出处、引用格式], [Google Scholar],
-  [想找现成的轮子], [GitHub 搜索 / Code Search，用之前先看 LICENSE],
+  [想#highlight[找现成的轮子]], [GitHub 搜索 / Code Search，用之前先看 LICENSE],
   [上手新工具、新库], [官方文档的 Getting Started],
-  [学公开课（如 CS231n）], [课程主页 → YouTube 讲解 → B 站 / 知乎补充],
+  [学公开课], [课程主页 → YouTube 讲解 → B 站 / 知乎补充],
 )
 
 == 让信息能被搜索、复制、复现
@@ -175,6 +179,7 @@
 - 图形界面、启动画面、无法复制的错误：清晰截图也合适。
 - 写实际版本、操作位置。
 - 分享之前删去密码、Token、Cookie、个人信息。
+- 尝试用 Issue 反馈问题
 
 
 == X–Y Problem
@@ -183,18 +188,10 @@
 
 于是你问“怎么实现 Y” —— 但 Y 根本就是错的方向。
 
+XY问题会掩盖真正的核心问题，甚至可能引入次生问题，从而导致沟通不畅、资源浪费，并且无法高效解决问题。对于支持人员而言，解决办法是主动提出探索性问题，询问对方为什么需要这些信息，以便找出根本问题X，并引导用户摆脱错误的研究方向。
+
 #v(1em)
-
-笔试题案例：
-#table(columns: (auto, 1fr), inset: 8pt,
-  [目标 X], [想取得文件扩展名],
-  [猜测的办法 Y], [截取文件名最后三个字符],
-  [只问 Y], [“怎么截取最后三个字符？”],
-  [更好的问法], [“想识别文件类型；扩展名靠谱吗？”],
-)
-*描述你的最终目标，而不是你想象中的中间步骤。*
-
-
+#text(size: 0.5em)[https://zh.wikipedia.org/zh-cn/XY%E9%97%AE%E9%A2%98]
 == 别让AI替你负责
 
 「AI Agent 试图扫描 DN42 时把主人搞破产了」
@@ -210,10 +207,9 @@
 
 == 提问之后
 
-科协水群里有句“暴言”：「有技术问题时，摇人比查文档更方便。」
-
 交流当然值得鼓励 —— 但提问之前先付出努力；即使问了，主动权也始终在你手里：对方没有义务替你解决，继续自己找答案也许依然需要。
 
+#v(1.5em)
 #align(center)[
 推荐阅读：《提问的智慧》（How To Ask Questions The Smart Way）
 
@@ -247,7 +243,7 @@
 
 #place(
   top + left, 
-  dx: 20cm, 
+  dx: 21cm, 
   dy: 7.5cm, 
   image("/assets/image-2.png", width: 25%)
 )
@@ -450,8 +446,8 @@ MIT 的一门课，专门补这个缺口，已有完整中文版：
 
 == GNU is Not Unix
 
-为了反击AT&T，他开始研发一个基于Unix的项目，但完全从零开始构建
-#align(center)[
+为了反击AT&T，他开始研发一个基于Unix的项目，但完全从零开始构建。
+#align(left)[
 
 #block(
   fill: rgb("#16181b"),
@@ -702,31 +698,6 @@ Linux 只是内核。你真正能装上手的，是*发行版* —— 把内核�
    - SSH 连服务器时用 —— 对面往往连桌面都没有
   ],
 )
-
-== 一个小任务
-
-下节课亲手完成，今天先*预测*最后会输出几：
-
-#block(
-  fill: rgb("#16181b"),
-  inset: (x: 22pt, top: 14pt, bottom: 16pt),
-  radius: 6pt,
-  stroke: 1pt + rgb("#282e34"),
-)[
-  #show raw.where(block: true): set text(fill: rgb("#e7fcff"), size: 10.5pt)
-  ```bash
-  # 在 Bash 中执行；新建临时目录，避免覆盖已有文件
-  lab=$(mktemp -d "$HOME/sast-lab.XXXXXX"); cd "$lab"
-  printf '%s\n' 200 404 200 500 404 > status.log
-  cat status.log
-  grep -x '404' status.log | wc -l
-  ```
-]
-
-#v(0.5em)
-
-两个各只做一件事的工具，用管道拼出答案 —— 这就是 Unix 哲学。
-
 
 
 #focus-slide[
