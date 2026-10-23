@@ -303,6 +303,58 @@ MIT 的一门课，专门补这个缺口，已有完整中文版：
 
 桌面之外（从掌心设备到云端算力，再到算力巅峰的超算与 AI 集群），人类几乎所有的现代计算底座都跑在 Linux 上。
 
+== 发行版：打包好的自由
+
+Linux 只是内核。你真正能装上手的，是*发行版* —— 把内核、GNU 工具、包管理器和安装器打包好的成品：
+
+#v(0.5em)
+
+#align(center)[
+  #box(image("/assets/debian.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/ubuntu.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/fedora.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/archlinux.svg", height: 2.4em)) #h(1.4em)
+  #box(image("/assets/android.svg", height: 2.4em))
+]
+
+#v(0.5em)
+
+#table(columns: (auto, 1fr), inset: 9pt,
+  [*Debian 系*], [Debian → Ubuntu → Mint ……（`apt`）],
+  [*Red Hat 系*], [Fedora / RHEL / CentOS ……（`dnf`）],
+  [*Arch 系*], [Arch → Manjaro ……（`pacman`），滚动更新],
+  [*另类*], [Android：Linux 内核 + 一套完全不同的用户态],
+)
+
+#v(0.5em)
+
+南邮镜像站：`mirrors.njupt.edu.cn`
+
+== 终端 ≠ Shell
+
+#grid(columns: (1fr, 2fr), gutter: 1em,
+  [
+   #v(1em)
+
+   ```text
+   宿主机：你的电脑
+   └─ VMware（虚拟化软件）
+     └─ Guest：一台虚拟电脑
+       └─ Ubuntu（发行版）
+         └─ 终端（窗口）
+           └─ Bash（Shell）
+   ```
+  ],
+  [
+   #v(1em)
+
+   - *终端*：那个黑窗口，管显示和键盘输入
+   - *Shell*：真正理解命令的程序（Bash / Zsh / Fish）
+   - SSH 连服务器时用 —— 对面往往连桌面都没有
+  ],
+)
+
+
 == 为什么值得大学生认识它
 
 #align(center)[
@@ -578,7 +630,7 @@ GNU项目从头开始完成了大部分工作：
     #text[Bash Shell]
 ]
 #v(1em)
-......以及众多核心工具集。但他们一直缺少一个关键组件 —— 内核。
+......以及众多coreutils（核心工具集）。但他们一直缺少一个关键组件 —— 内核。
 
 == 与此同时，赫尔辛基 (1991)
 
@@ -712,56 +764,6 @@ GNU 的零件箱万事俱备，只差内核 —— Hurd 却迟迟难产；而 Li
 grep -x '404' status.log | wc -l
 ```
 
-== 发行版：打包好的自由
-
-Linux 只是内核。你真正能装上手的，是*发行版* —— 把内核、GNU 工具、包管理器和安装器打包好的成品：
-
-#v(0.5em)
-
-#align(center)[
-  #box(image("/assets/debian.svg", height: 2.4em)) #h(1.4em)
-  #box(image("/assets/ubuntu.svg", height: 2.4em)) #h(1.4em)
-  #box(image("/assets/fedora.svg", height: 2.4em)) #h(1.4em)
-  #box(image("/assets/archlinux.svg", height: 2.4em)) #h(1.4em)
-  #box(image("/assets/android.svg", height: 2.4em))
-]
-
-#v(0.5em)
-
-#table(columns: (auto, 1fr), inset: 9pt,
-  [*Debian 系*], [Debian → Ubuntu → Mint ……（`apt`）],
-  [*Red Hat 系*], [Fedora / RHEL / CentOS ……（`dnf`）],
-  [*Arch 系*], [Arch → Manjaro ……（`pacman`），滚动更新],
-  [*另类*], [Android：Linux 内核 + 一套完全不同的用户态],
-)
-
-#v(0.5em)
-
-本组统一 *Ubuntu 24.04 LTS*：文档最多、报错最好搜 —— 这正是上半场的道理。镜像与安装包走南邮镜像站：`mirrors.njupt.edu.cn`
-
-== 终端 ≠ Shell
-
-#grid(columns: (1fr, 2fr), gutter: 1em,
-  [
-   #v(1em)
-
-   ```text
-   宿主机：你的电脑
-   └─ VMware（虚拟化软件）
-     └─ Guest：一台虚拟电脑
-       └─ Ubuntu（发行版）
-         └─ 终端（窗口）
-           └─ Bash（Shell）
-   ```
-  ],
-  [
-   #v(1em)
-
-   - *终端*：那个黑窗口，管显示和键盘输入
-   - *Shell*：真正理解命令的程序（Bash / Zsh / Fish）
-   - SSH 连服务器时用 —— 对面往往连桌面都没有
-  ],
-)
 
 
 #focus-slide[
