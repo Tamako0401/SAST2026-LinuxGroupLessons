@@ -447,59 +447,64 @@ MIT 的一门课，专门补这个缺口，已有完整中文版：
 == GNU is Not Unix
 
 为了反击AT&T，他开始研发一个基于Unix的项目，但完全从零开始构建。
-#align(left)[
 
-#block(
-  fill: rgb("#16181b"),
-  inset: (x: 22pt, top: 20pt, bottom: 24pt),
-  radius: 6pt,
-  stroke: 1pt + rgb("#282e34"),
-)[
-  #set text(
-    font: ("Cascadia Code", "DejaVu Sans Mono", "Consolas", "Courier New"),
-    size: 10.5pt,
-    fill: rgb("#e7fcff"),
-  )
-  #set smartquote(enabled: false)
-  #set par(leading: 0.75em, justify: false)
 
-  GNU 0.3 (hurdle) (tty1)
+#align(center)[
 
-  #v(8pt)
+  #block(
+    fill: rgb("#16181b"),
+    inset: (x: 22pt, top: 20pt, bottom: 24pt),
+    radius: 6pt,
+    stroke: 1pt + rgb("#282e34"),
+  )[
+    #set text(
+      font: ("Cascadia Code", "DejaVu Sans Mono", "Consolas", "Courier New"),
+      size: 10.5pt,
+      fill: rgb("#e7fcff"),
+    )
+    #set smartquote(enabled: false)
+    #set par(leading: 0.75em, justify: false)
 
-  #grid(
-    columns: (auto, auto),
-    gutter: 14pt,
-    align: (top, top),
-    block(
-      fill: rgb("#bcc4c8"),
-      stroke: 0.8pt + rgb("#555d64"),
-      radius: 1.5pt,
-      inset: 2pt,
-      width: 34pt,
-      height: 34pt,
-      align(center + horizon)[
-        #image("/assets/gnu.svg", width: 27pt)
-      ]
-    ),
-    [
-      #v(1pt)
-      This is the superunprivileged.org Hurd LiveCD. \
-      Welcome.
+    #align(left)[
+  
+      GNU 0.3 (hurdle) (tty1)
+
+      #v(8pt)
+
+      #grid(
+        columns: (auto, auto),
+        gutter: 14pt,
+        align: (top, top),
+        block(
+          fill: rgb("#bcc4c8"),
+          stroke: 0.8pt + rgb("#555d64"),
+          radius: 1.5pt,
+          inset: 2pt,
+          width: 34pt,
+          height: 34pt,
+          align(center + horizon)[
+            #image("/assets/gnu.svg", width: 27pt)
+          ]
+        ),
+        [
+          #v(1pt)
+          This is the superunprivileged.org Hurd LiveCD. \
+          Welcome.
+        ]
+      )
+
+      #v(10pt)
+
+      Use 'login USER' to login, or 'help' for more information about logging in. \
+      Try logging in as the 'guest', or the 'tutorial' user. The passwords are \
+      the same as the usernames. \
+      After logging in, use 'info guide' to learn more about how to use the Hurd.
+
+      #v(8pt)
+
+      login> \_
     ]
-  )
-
-  #v(10pt)
-
-  Use 'login USER' to login, or 'help' for more information about logging in. \
-  Try logging in as the 'guest', or the 'tutorial' user. The passwords are \
-  the same as the usernames. \
-  After logging in, use 'info guide' to learn more about how to use the Hurd.
-
-  #v(8pt)
-
-  login> \_
-]
+  ]
 ]
 
 
@@ -558,10 +563,18 @@ MIT 的一门课，专门补这个缺口，已有完整中文版：
 
 GNU项目从头开始完成了大部分工作：
   #columns(2, gutter: 1em)[
-    #image("/assets/image-7.png", width: 100%)
+    #box(
+      radius: 6pt,
+      clip: true,
+      image("/assets/image-7.png", width: 100%)
+    )
     #text[GCC 编译器]
 
-    #image("/assets/image-12.png", width: 98%)
+    #box(
+      radius: 6pt,
+      clip: true,
+      image("/assets/image-12.png", width: 98%)
+    )
     #text[Bash Shell]
 ]
 #v(1em)
