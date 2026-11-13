@@ -169,3 +169,40 @@
 .slidev-layout .cell-output th:first-child { width: 2.8rem; border-right: 1px solid var(--line); text-align: right; color: var(--muted); }
 .cell-stderr { border-top: 1px solid var(--line); padding: 0.4rem 0.65rem; color: #9a312a; font-size: 0.85rem; }
 .cell-stderr pre { margin: 0.25rem 0; white-space: pre-wrap; }
+
+/* 终端式输出：浅色终端，只显示 stdout/stderr，退出码用彩色圆点 */
+.term-screen {
+  --term-bg: #ffffff;
+  --term-ink: #422a0b;
+  --term-muted: #9d9d9d;
+  --term-ok: #3fb950;
+  --term-bad: #f85149;
+  --term-hit: #ff6b6b;
+  --term-line: #3c3c3c;
+  background: var(--term-bg);
+  color: var(--term-ink);
+  font: 0.88rem/1.35 var(--slidev-code-font-family, monospace);
+  border-radius: 0 0 2px 2px;
+}
+.slidev-layout .term-out,
+.slidev-layout .term-stderr {
+  margin: 0;
+  background: transparent;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.term-out { padding: 0.4rem 0.8rem 0.55rem; color: var(--term-ink); }
+.term-stderr { padding: 0.4rem 0.8rem; color: var(--term-bad); }
+.slidev-layout .term-hit { background: transparent; color: var(--term-hit); font-weight: 700; }
+.term-status {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.42rem 0.8rem;
+  border-top: 1px solid var(--term-line);
+  color: var(--term-muted);
+  font-size: 0.8rem;
+}
+.term-dot { width: 0.5rem; height: 0.5rem; border-radius: 50%; flex: none; }
+.term-dot.term-ok { background: var(--term-ok); }
+.term-dot.term-bad { background: var(--term-bad); }

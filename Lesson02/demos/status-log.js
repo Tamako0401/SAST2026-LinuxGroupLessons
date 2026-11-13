@@ -10,6 +10,7 @@ export const statusLogSteps = [
     id: 'filter-log',
     title: '筛选整行',
     command: prepareLog + "\ngrep -x '404' status.log",
+    highlight: '404',
   },
   {
     id: 'count-log',
