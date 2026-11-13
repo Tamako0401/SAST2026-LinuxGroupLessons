@@ -4,9 +4,11 @@ import { tmpdir } from 'node:os'
 import { isAbsolute, join } from 'node:path'
 import { promisify } from 'node:util'
 import { statusLogSteps } from './demos/status-log.js'
+import { coverGreetSteps } from './demos/cover-greet.js'
+import { blackBoxSteps } from './demos/black-box.js'
 
 const exec = promisify(execFile)
-const presets = new Map(statusLogSteps.map(({ id, command }) => [id, command]))
+const presets = new Map([...statusLogSteps, ...coverGreetSteps, ...blackBoxSteps].map(({ id, command }) => [id, command]))
 const endpoint = '/__lesson02/run/'
 
 function reply(response, status, data) {

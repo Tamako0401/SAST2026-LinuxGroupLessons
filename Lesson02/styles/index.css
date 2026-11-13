@@ -9,6 +9,7 @@
   --cell-shadow: #d9d3cb;
   --accent: #3f4e9b;
   padding: 0;
+  position: relative;
   background: var(--paper);
   color: var(--ink);
   font-size: 1.15rem;
@@ -43,9 +44,17 @@
   font-weight: 650;
 }
 
-.lesson-cover .workspace-content { padding-top: 4.25rem; }
+.lesson-cover .workspace-content { padding-top: 2.75rem; }
 .lesson-cover h1 { font-size: 3.45rem; }
 .lesson-cover h1 + p { color: var(--muted); font-size: 1.35rem; }
+.lesson-cover .cover-illustration {
+  position: absolute;
+  right: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20rem;
+  height: auto;
+}
 
 .cover-command {
   display: inline-block;
@@ -59,6 +68,29 @@
 }
 
 .cover-command span { margin-right: 0.45em; color: var(--accent); }
+
+/* 封面复用 notebook：收紧宽度并略微缩小，不占满整页 */
+.lesson-cover .notebook { max-width: 31rem; margin-top: 1.4rem; }
+.lesson-cover .notebook .cell-line { font-size: 0.9rem; }
+
+.lesson-page-two .notebook { max-width: 31rem; margin-top: 0rem; }
+.lesson-page-two .notebook .cell-line { font-size: 0.9rem; }
+
+/* 第二页 Recap：只重新摆位，元素与其样式保持不变 */
+.lesson-page-two .workspace-content {
+  height: calc(100% - 3.15rem);
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  grid-template-rows: auto auto auto 1fr;
+  column-gap: 3rem;
+}
+.lesson-page-two .course-label { grid-column: 1; grid-row: 1; }
+.lesson-page-two h1 { grid-column: 1; grid-row: 2; }
+.lesson-page-two ul { grid-column: 1; grid-row: 3; }
+.lesson-page-two .notebook { grid-column: 2; grid-row: 1 / -1; align-self: start; margin-top: 1.5rem;}
+.lesson-page-two .lesson-callout { grid-column: 1 / -1; grid-row: 4; align-self: end; margin-bottom: 6.666rem;}
+
 .course-agenda {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -117,7 +149,7 @@
 }
 .cell-run:disabled { box-shadow: none; opacity: 0.6; cursor: default; }
 .cell-language { font-family: var(--slidev-code-font-family, monospace); }
-.cell-code { min-height: 4rem; padding: 0.15rem 0.7rem 0.7rem; }
+.cell-code { min-height: 2.5rem; padding: 0.15rem 0.7rem 0.7rem; }
 .cell-line { display: grid; grid-template-columns: 1.5rem minmax(0, 1fr); gap: 0.55rem; font: 0.98rem/1.55 var(--slidev-code-font-family, monospace); }
 .cell-line > span { text-align: right; color: var(--muted); user-select: none; }
 .slidev-layout .cell-line code,

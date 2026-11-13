@@ -1,7 +1,7 @@
 <template>
   <div class="slidev-layout lesson-workspace">
     <div class="workspace-bar">
-      <span>课程</span><span aria-hidden="true">›</span><strong>命令行核心用法</strong>
+      <span>2026.SAST 软件研发部</span><span aria-hidden="true">›</span><strong>运维组 · 第二课</strong>
     </div>
     <div class="workspace-content">
       <slot />
