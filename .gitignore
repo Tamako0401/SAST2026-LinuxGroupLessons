@@ -1,3 +1,6 @@
 /.preview
 # Claude handoff checkpoints (transient, not part of the deliverable)
 /.claude/handoffs/
+
+# macOS
+.DS_Store
