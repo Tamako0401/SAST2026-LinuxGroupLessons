@@ -673,28 +673,55 @@ cat /proc/1/comm
 
 
 ---
-
-<div class="course-label">模块 07 · 74–84 min</div>
-
-# ssh：最流行的远程控制手段
-
-<code>ssh user@host</code> → 首次确认 fingerprint → <code>exit</code> 回来
-
-重点看提示符 hostname 变了没
-
-<code>scp</code> 一句带过
-
-<!-- ssh 只讲到这里；密钥认证、端口转发、tmux 不讲。 -->
-
+routeAlias: ssh
 ---
 
-# 课后任务
+<div class="course-label">07 · 服务与远程</div>
 
-- 回顾教程 1.2–1.7，补读 1.8 权限、1.9 软件包、1.10 SSH。
-- 用 nano 或 Vim 写一份不超过 200 字的使用心得或翻车记录。
-- 在自己机器上 <code>sudo apt install cowsay</code>，再 <code>ssh localhost</code> 连一次自己。
-- 有余力，把课堂挑战改成统计 <code>500</code>。
+# SSH：连接远程主机
 
-<div class="lesson-callout">会预测、会查帮助，也能解释每一段管道。</div>
+远程主机开启 SSH 服务后，用**远程用户名**和**主机地址**从本机终端发起加密连接。
 
-<!-- E10 · 84–90 min。 -->
+<div class="lesson-columns ssh-guide">
+  <section>
+    <h2>SSH · 运行命令</h2>
+    <code class="ssh-command">ssh student@lab-ubuntu</code>
+    <p><code>student</code> 是远程用户名，<code>lab-ubuntu</code> 是主机名，也可以填 IP 地址。</p>
+    <p>连上后，命令在远程主机上执行。输入 <code>exit</code> 回到本机。</p>
+  </section>
+  <section>
+    <h2>SFTP · 传输文件</h2>
+    <code class="ssh-command">sftp student@lab-ubuntu</code>
+    <p>通过 SSH 传文件，沿用同一套登录凭据。</p>
+    <p><code>put 文件名</code> 上传，<code>get 文件名</code> 下载。</p>
+  </section>
+</div>
+
+<div class="lesson-callout"><strong>登录凭据</strong>　按服务器的设置，用远程账户的密码，或用 SSH 密钥（公钥交给管理员，私钥自己保管）。</div>
+
+<!-- E9 · 用自有练习机演示。目标主机要已开启 SSH 服务，并允许 SFTP。首次连接时先核对管理员给出的主机指纹。可用 hostname 对照本机与远端；SFTP 用 get 下载准备好的小文件。 -->
+
+---
+routeAlias: learning-resources
+---
+
+# 一些学习资料
+
+<div class="lesson-columns learning-resources">
+  <section>
+    <h2>本课用到的资料</h2>
+    <ul>
+      <li><a href="https://www.zouht.com/4399.html" target="_blank" rel="noopener">《只学够用的 Linux》</a><span>授课参考，可从第 1.2–1.10 节复习。</span></li>
+      <li><a href="https://sajidmahmood.com/linux-directories/" target="_blank" rel="noopener">Linux Directories Simplified</a><span>Sajid Mahmood 的目录结构配图与原文。</span></li>
+      <li><a href="https://learn.microsoft.com/en-us/windows/wsl/install" target="_blank" rel="noopener">安装 WSL · Microsoft Learn</a><span>在 Windows 上准备 Linux 练习环境。</span></li>
+    </ul>
+  </section>
+  <section>
+    <h2>推荐阅读</h2>
+    <ul>
+      <li><a href="https://101.lug.ustc.edu.cn/" target="_blank" rel="noopener">Linux 101 · 中国科大 LUG</a><span>跟着中文教程练习文件、命令行与远程操作。</span></li>
+      <li><a href="https://linuxcommand.org/tlcl.php" target="_blank" rel="noopener">The Linux Command Line</a><span>William Shotts 的命令行教材，有免费电子版。</span></li>
+      <li><a href="https://web.stanford.edu/class/me228/pdf/cathedral-bazaar.pdf" target="_blank" rel="noopener">《大教堂与集市》</a><span>Eric S. Raymond 谈开源协作（英文原文 PDF）。</span></li>
+    </ul>
+  </section>
+</div>

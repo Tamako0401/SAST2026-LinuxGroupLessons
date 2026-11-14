@@ -138,6 +138,39 @@ html.dark .lesson-workspace a:hover { color: var(--palette-indigo-12); }
 .lesson-callout { margin-top: 1.1rem; padding: 0.55rem 0.8rem; border-left: 2px solid var(--callout-line); background: var(--callout-surface); }
 .lesson-quote { margin-top: 1.1rem; padding: 0.55rem 0.8rem; border-left: 2px solid var(--accent);  line-height: 1.75; color: var(--ink); background: var(--quote-surface);}
 
+.lesson-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.1rem;
+  border: 1px solid var(--outline);
+  border-radius: 3px;
+  background: var(--surface);
+}
+
+.lesson-columns > section { padding: 0.85rem 1rem; }
+.lesson-columns > section + section { border-left: 1px solid var(--line); }
+.lesson-workspace .lesson-columns h2 { margin: 0 0 0.65rem; font-size: 1.3rem; font-weight: 700; }
+.lesson-workspace .ssh-command {
+  display: block;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid var(--line);
+  font-size: 1.05rem;
+  color: var(--accent);
+}
+.lesson-workspace .ssh-guide p { margin: 0.6rem 0 0; font-size: 1rem; line-height: 1.55; }
+.lesson-workspace .learning-resources ul { list-style: none; margin: 0; padding: 0; }
+.lesson-workspace .learning-resources li { margin: 0; padding: 0.65rem 0; border-top: 1px solid var(--line); }
+.learning-resources li:last-child { padding-bottom: 0; }
+.learning-resources span { display: block; color: var(--muted); font-size: 0.96rem; }
+.lesson-workspace .learning-resources a {
+  border-bottom: 0;
+  color: var(--accent);
+  font-weight: 650;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+.learning-resources a:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
 .notebook { margin-top: 1rem; }
 .notebook-tabs { display: flex; gap: 1rem; margin-bottom: -1px; }
 .notebook button { cursor: pointer; }
