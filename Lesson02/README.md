@@ -12,7 +12,7 @@ npm run dev
 
 运行 `npm run build` 可生成 `dist/` 下的静态课件。运行按钮需要由 `npm run dev` 启动的本机课件服务。
 
-- 课件按现有教案安排开场、六个模块、综合挑战和课后任务。各模块保留扩写位置，讲师备注标注 E0–E8。[slides.md](slides.md)
+- 课件按教案安排环境检查、七个模块、综合挑战和课后任务。讲师备注标注 E0–E10，换页统一使用水平滑动。[slides.md](slides.md)
 - 页面使用统一的 16:9 布局。按方向键翻页，或打开 Slidev 的[总览](http://localhost:5173/overview)。[章节布局](layouts/lesson-section.vue) · [样式](styles/index.css)
 - [色板](styles/palette.css)保存了 Radix Sand、Indigo、Green、Red、Amber 的完整浅色和深色色阶。在[样式](styles/index.css)中按用途引用同名变量，例如用 `--palette-indigo-5` 做选中背景。Notebook 和控件沿用直角或 3px 小圆角。
 - 在 [Browser Exporter](http://localhost:5173/export) 的 **Color Mode** 中切换 **Light** 或 **Dark**。首次打开课件时跟随系统配色，切换后由 Slidev 记住浏览器的选择。
