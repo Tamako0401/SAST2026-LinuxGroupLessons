@@ -208,6 +208,78 @@ cd ../
 <!-- E2 · 先把 / 比作整棵目录树的根，再说明 Ubuntu 不按 C:、D: 切换盘符。pwd 验证每次 cd 后的位置。 -->
 
 ---
+routeAlias: filesystem-hierarchy
+---
+
+<div class="course-label"> 02 · 目录、文件与权限</div>
+
+# FHS（文件系统层次结构标准）
+
+<figure class="fhs-overview">
+  <img src="/fhs/overview.webp" alt="原文的 Linux 目录总览。从根目录 / 展开，列出 /bin 的命令、/etc 的配置，以及 /usr 和 /var 的子目录。" />
+  <figcaption>从 <code>/</code> 出发，按用途找文件。多个文件系统可以挂到树上的不同位置，如 <code>/mnt/data</code>。</figcaption>
+</figure>
+
+<!--
+从顶上的 / 开始，举例：/bin/ls、/etc/hosts、/usr/share/man、/var/log。目录用途是 FHS 的分工。  
+Linux 路径不以 C:、D: 来区分磁盘。系统分区提供 /，另一块盘的分区挂在 /mnt/data，文件就通过 /mnt/data/report.txt 访问。用 lsblk -f 或 findmnt 来只读查看。  
+开 Termius 拿几台机器看一下 fdisk
+-->
+
+---
+
+<div class="course-label"> 02 · 目录、文件与权限</div>
+
+# 从 <code>/</code> 看 <code>/boot</code>、<code>/bin</code> 和 <code>/sbin</code>
+
+<div class="fhs-gallery fhs-system">
+  <figure>
+    <figcaption><code>/</code> · Arch Linux</figcaption>
+    <img src="/fhs/root.webp" alt="Arch Linux 根目录的文件列表，其中 bin 和 sbin 指向 usr/bin，lib 指向 usr/lib。" />
+  </figure>
+  <div class="fhs-stack">
+    <figure>
+      <figcaption><code>/boot</code> · 启动文件</figcaption>
+      <img src="/fhs/boot.webp" alt="Omarchy 的 boot 目录，包含 EFI、loader 和 Limine 配置文件。" />
+    </figure>
+    <figure>
+      <figcaption><code>/bin</code>、<code>/sbin</code> · 符号链接</figcaption>
+      <img src="/fhs/symlinks.webp" alt="作者的 Arch Linux 中，/bin 和 /sbin 都指向 /usr/bin。" />
+    </figure>
+    <p>传统上 <code>/bin</code> 放常用命令，<code>/sbin</code> 放系统管理命令。图里的系统把两者都链接到 <code>/usr/bin</code>。</p>
+  </div>
+</div>
+
+<!--
+左图找到 /etc、/home 和 /root，再找带箭头的 /bin、/lib、/sbin。通过 /bin 看到的是 /usr/bin 里的内容，这是符号链接，与把另一块盘挂到(mount)目录是两回事。
+-->
+
+---
+
+<div class="course-label"> 02 · 目录、文件与权限</div>
+
+# 已安装的资源放在 <code>/usr</code>，变化的数据放在 <code>/var</code>
+
+<div class="fhs-gallery">
+  <figure>
+    <figcaption><code>/usr</code> · 命令、库、共享资源</figcaption>
+    <img src="/fhs/usr.webp" alt="Arch Linux 的 /usr，展示 bin、include、lib、local、share 等子目录。" />
+    <p><code>bin/</code> 常用命令 · <code>lib/</code> 库 · <code>share/</code> 共享资源</p>
+  </figure>
+  <figure>
+    <figcaption><code>/var</code> · 运行中会变化的数据</figcaption>
+    <img src="/fhs/var.webp" alt="Arch Linux 的 /var，展示 cache、lib、log、spool、tmp 等子目录。" />
+    <p><code>log/</code> 日志 · <code>cache/</code> 缓存 · <code>spool/</code> 队列</p>
+  </figure>
+</div>
+
+
+<!--
+/usr 举例可以指 /usr/share/man，和前面使用 man 呼应。/var 举例指 /var/log。  
+/var/tmp 的内容通常比 /tmp 保留更久，但两者都不适合作为长期存储。
+-->
+
+---
 
 <div class="course-label"> 02 · 目录、文件与权限</div>
 

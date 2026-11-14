@@ -278,6 +278,67 @@ html.dark .lesson-workspace a:hover { color: var(--palette-indigo-12); }
 .permission-key strong { color: var(--accent); }
 .distro-grid img { width: 2rem; height: 2rem; }
 
+/* FHS 原文配图 */
+.lesson-workspace .fhs-overview,
+.lesson-workspace .fhs-gallery figure {
+  margin: 0;
+}
+
+.fhs-overview img,
+.fhs-gallery img {
+  display: block;
+  max-width: 100%;
+  border: 1px solid var(--outline);
+  border-radius: 3px;
+}
+
+.fhs-overview img {
+  height: 25rem;
+  margin-inline: auto;
+  background: var(--surface);
+}
+
+.fhs-overview figcaption {
+  margin-top: 0.4rem;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.fhs-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: start;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.fhs-gallery.fhs-system { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr); }
+
+.fhs-gallery figcaption {
+  margin-bottom: 0.35rem;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.fhs-gallery img { width: 100%; }
+.fhs-stack figure + figure { margin-top: 0.85rem; }
+
+.lesson-workspace .fhs-gallery p {
+  margin: 0.45rem 0 0;
+  font-size: 0.91rem;
+  line-height: 1.45;
+}
+
+.fhs-credit {
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 0.74rem;
+  line-height: 1.4;
+}
+
+.fhs-overview + .fhs-credit { text-align: center; }
+
 .slide-left-enter-active,
 .slide-left-leave-active,
 .slide-right-enter-active,
