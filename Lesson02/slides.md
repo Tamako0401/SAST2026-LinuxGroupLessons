@@ -3,8 +3,9 @@ theme: default
 title: 运维组第二次授课
 layout: lesson-section
 class: lesson-cover
-colorSchema: light
+colorSchema: auto
 aspectRatio: 16/9
+transition: slide-left
 fonts:
   provider: none
   sans: '"Microsoft YaHei UI", "PingFang SC", "Noto Sans CJK SC", sans-serif'

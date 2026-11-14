@@ -1,0 +1,145 @@
+/*
+ * Radix Colors 3.0.0 · Light / Dark sRGB
+ * https://github.com/radix-ui/colors · MIT
+ * 1-2 背景 3-5 控件底色与状态 6-8 边框 9-10 实色 11-12 文字
+ */
+.slidev-layout.lesson-workspace {
+  --palette-white: #fff;
+
+  /* 中性色，用于画布、分隔线、边框和正文 */
+  --palette-sand-1: #fdfdfc;
+  --palette-sand-2: #f9f9f8;
+  --palette-sand-3: #f1f0ef;
+  --palette-sand-4: #e9e8e6;
+  --palette-sand-5: #e2e1de;
+  --palette-sand-6: #dad9d6;
+  --palette-sand-7: #cfceca;
+  --palette-sand-8: #bcbbb5;
+  --palette-sand-9: #8d8d86;
+  --palette-sand-10: #82827c;
+  --palette-sand-11: #63635e;
+  --palette-sand-12: #21201c;
+
+  /* 交互色，用于运行按钮、选中、焦点和命中结果 */
+  --palette-indigo-1: #fdfdfe;
+  --palette-indigo-2: #f7f9ff;
+  --palette-indigo-3: #edf2fe;
+  --palette-indigo-4: #e1e9ff;
+  --palette-indigo-5: #d2deff;
+  --palette-indigo-6: #c1d0ff;
+  --palette-indigo-7: #abbdf9;
+  --palette-indigo-8: #8da4ef;
+  --palette-indigo-9: #3e63dd;
+  --palette-indigo-10: #3358d4;
+  --palette-indigo-11: #3a5bc7;
+  --palette-indigo-12: #1f2d5c;
+
+  /* 成功状态 */
+  --palette-green-1: #fbfefc;
+  --palette-green-2: #f4fbf6;
+  --palette-green-3: #e6f6eb;
+  --palette-green-4: #d6f1df;
+  --palette-green-5: #c4e8d1;
+  --palette-green-6: #adddc0;
+  --palette-green-7: #8eceaa;
+  --palette-green-8: #5bb98b;
+  --palette-green-9: #30a46c;
+  --palette-green-10: #2b9a66;
+  --palette-green-11: #218358;
+  --palette-green-12: #193b2d;
+
+  /* 错误状态 */
+  --palette-red-1: #fffcfc;
+  --palette-red-2: #fff7f7;
+  --palette-red-3: #feebec;
+  --palette-red-4: #ffdbdc;
+  --palette-red-5: #ffcdce;
+  --palette-red-6: #fdbdbe;
+  --palette-red-7: #f4a9aa;
+  --palette-red-8: #eb8e90;
+  --palette-red-9: #e5484d;
+  --palette-red-10: #dc3e42;
+  --palette-red-11: #ce2c31;
+  --palette-red-12: #641723;
+
+  /* 提示和警告 */
+  --palette-amber-1: #fefdfb;
+  --palette-amber-2: #fefbe9;
+  --palette-amber-3: #fff7c2;
+  --palette-amber-4: #ffee9c;
+  --palette-amber-5: #fbe577;
+  --palette-amber-6: #f3d673;
+  --palette-amber-7: #e9c162;
+  --palette-amber-8: #e2a336;
+  --palette-amber-9: #ffc53d;
+  --palette-amber-10: #ffba18;
+  --palette-amber-11: #ab6400;
+  --palette-amber-12: #4f3422;
+}
+
+html.dark .slidev-layout.lesson-workspace {
+  --palette-sand-1: #111110;
+  --palette-sand-2: #191918;
+  --palette-sand-3: #222221;
+  --palette-sand-4: #2a2a28;
+  --palette-sand-5: #31312e;
+  --palette-sand-6: #3b3a37;
+  --palette-sand-7: #494844;
+  --palette-sand-8: #62605b;
+  --palette-sand-9: #6f6d66;
+  --palette-sand-10: #7c7b74;
+  --palette-sand-11: #b5b3ad;
+  --palette-sand-12: #eeeeec;
+
+  --palette-indigo-1: #11131f;
+  --palette-indigo-2: #141726;
+  --palette-indigo-3: #182449;
+  --palette-indigo-4: #1d2e62;
+  --palette-indigo-5: #253974;
+  --palette-indigo-6: #304384;
+  --palette-indigo-7: #3a4f97;
+  --palette-indigo-8: #435db1;
+  --palette-indigo-9: #3e63dd;
+  --palette-indigo-10: #5472e4;
+  --palette-indigo-11: #9eb1ff;
+  --palette-indigo-12: #d6e1ff;
+
+  --palette-green-1: #0e1512;
+  --palette-green-2: #121b17;
+  --palette-green-3: #132d21;
+  --palette-green-4: #113b29;
+  --palette-green-5: #174933;
+  --palette-green-6: #20573e;
+  --palette-green-7: #28684a;
+  --palette-green-8: #2f7c57;
+  --palette-green-9: #30a46c;
+  --palette-green-10: #33b074;
+  --palette-green-11: #3dd68c;
+  --palette-green-12: #b1f1cb;
+
+  --palette-red-1: #191111;
+  --palette-red-2: #201314;
+  --palette-red-3: #3b1219;
+  --palette-red-4: #500f1c;
+  --palette-red-5: #611623;
+  --palette-red-6: #72232d;
+  --palette-red-7: #8c333a;
+  --palette-red-8: #b54548;
+  --palette-red-9: #e5484d;
+  --palette-red-10: #ec5d5e;
+  --palette-red-11: #ff9592;
+  --palette-red-12: #ffd1d9;
+
+  --palette-amber-1: #16120c;
+  --palette-amber-2: #1d180f;
+  --palette-amber-3: #302008;
+  --palette-amber-4: #3f2700;
+  --palette-amber-5: #4d3000;
+  --palette-amber-6: #5c3d05;
+  --palette-amber-7: #714f19;
+  --palette-amber-8: #8f6424;
+  --palette-amber-9: #ffc53d;
+  --palette-amber-10: #ffd60a;
+  --palette-amber-11: #ffca16;
+  --palette-amber-12: #ffe7b3;
+}
