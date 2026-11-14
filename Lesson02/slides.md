@@ -612,7 +612,16 @@ sudo apt remove cowsay
 - **二进制包**通常由包管理器处理依赖和更新。**源码编译**适合需要定制构建选项时。
 - **固定版本发布**如 Ubuntu LTS，有独立的大版本升级。**滚动更新**如 Arch，软件包持续更新。
 
-<!-- 开场的 /etc/os-release -->
+<div class="distro-extras" role="list" aria-label="更多 Linux 项目">
+  <span role="listitem">应群友要求，它们也该出现在这里：</span>
+  <span role="listitem"><img src="/distros/suse.svg" alt="" />SUSE</span>
+  <span role="listitem"><img src="/distros/gentoo.svg" alt="" />Gentoo</span>
+  <span role="listitem"><img src="/distros/nixos.svg" alt="" />NixOS</span>
+  <span role="listitem"><img src="/distros/slackware.svg" alt="" />Slackware</span>
+  <span role="listitem"><img class="lfs-icon" src="/distros/lfs-logo.png" alt="" /><abbr title="Linux From Scratch">LFS</abbr></span>
+</div>
+
+<!-- 开场的 /etc/os-release。LFS 是指导读者从源码构建 Linux 系统的项目。角落的 SUSE、Gentoo、NixOS、Slackware 图标来自 https://simpleicons.org/，LFS 图标取自 https://www.linuxfromscratch.org/images/lfs-logo.png。 -->
 
 ---
 
