@@ -12,6 +12,7 @@ function escapeRegExp(text) {
 const props = defineProps({
   steps: { type: Array, required: true },
   outputStyle: { type: String, default: 'terminal' },
+  showStreamLabels: { type: Boolean, default: false },
 })
 
 const index = ref(0)
@@ -91,9 +92,15 @@ async function execute() {
           <p v-else-if="run.pending" class="cell-summary">等待 Bash 返回</p>
           <p v-else-if="run.error" class="cell-summary cell-error">{{ run.error }}</p>
           <template v-else>
-            <div class="term-screen">
-              <pre v-if="stdout" class="term-out" v-html="highlightedOutput"></pre>
-              <pre v-if="stderr" class="term-stderr">{{ stderr }}</pre>
+            <div class="term-screen" :class="{ 'term-screen-labeled': showStreamLabels }">
+              <template v-if="stdout">
+                <div v-if="showStreamLabels" class="term-channel-label">1 · stdout</div>
+                <pre class="term-out" v-html="highlightedOutput"></pre>
+              </template>
+              <template v-if="stderr">
+                <div v-if="showStreamLabels" class="term-channel-label term-stderr-label">2 · stderr</div>
+                <pre class="term-stderr">{{ stderr }}</pre>
+              </template>
               <div class="term-status">
                 <span class="term-dot" :class="exitCode === 0 ? 'term-ok' : 'term-bad'" aria-hidden="true"></span>
                 <span>退出码 {{ exitCode }} · {{ elapsedMs }} ms</span>

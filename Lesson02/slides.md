@@ -489,6 +489,33 @@ printf '<%s>\n' "$name"
 
 
 ---
+routeAlias: standard-streams
+---
+
+<div class="course-label">05 · 管道与特殊符号</div>
+
+# 三条标准通道
+
+<div class="standard-streams">
+  <div><code>0</code><strong>stdin</strong><span>标准输入 · 键盘 → 程序</span></div>
+  <div><code>1</code><strong>stdout</strong><span>标准输出 · 程序 → 屏幕</span></div>
+  <div><code>2</code><strong>stderr</strong><span>标准错误 · 程序 → 屏幕</span></div>
+</div>
+
+<script setup>
+import { standardStreamSteps } from './demos/standard-streams.js'
+</script>
+
+<NotebookDemo :steps="standardStreamSteps" show-stream-labels />
+
+<div class="lesson-callout"><code>0&lt;</code> 可以简写成 <code>&lt;</code>，<code>1&gt;</code> 可以简写成 <code>&gt;</code>，重定向标准错误要写 <code>2&gt;</code>。</div>
+
+<!-- echo 'hello'：默认把 'hello' 发送给标准输出（1）。  
+echo 'warning' >&2：这里的 >&2（完整写法是 1>&2）意思是“把当前命令的标准输出（1），复制到标准错误（2）所指向的地方”。因此 'warning' 被当成了错误信息发送出去。  
+{ ... } 1> out.txt：花括号把两条命令打包成一个整体。外面的 1> out.txt 意思是“只把这个整体产生的标准输出（1）重定向到 out.txt 文件中”，而标准错误（2）不受影响，依然指向屏幕。  
+讲完可顺带提 2>&1。 -->
+
+---
 
 <div class="course-label">05 · 管道与特殊符号</div>
 
